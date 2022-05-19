@@ -1,7 +1,7 @@
 .modal{
     background-color: beige;
-    width: 30%;
-    height: 5%;
+    width: 40%;
+    height: 10%;
     border-radius: 15px;
     padding: 20px;
     z-index: 100;
@@ -13,6 +13,7 @@
 }
 .body{
     padding-top:10px;
+   
 }
 .overlay{
     position: absolute;

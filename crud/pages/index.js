@@ -1,6 +1,7 @@
 import Card from "../component/Card/Card";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import RealButton from "../component/button/RealButton";
 import Seo from "../component/Seo/Seo";
 import {
   getFirestore,
@@ -17,9 +18,8 @@ function Home() {
   const onClicks = (id, title) => {
     router.push(
       {
-        pathname: `/${id}`,
+        pathname: `/${title}`,
         query: {
-          id,
           title: `${title}`,
         },
       },
@@ -72,7 +72,7 @@ function Home() {
       ))}
       <Link href={`/add`}>
         <a>
-          <button>글쓰기</button>
+          <RealButton>글쓰기</RealButton>
         </a>
       </Link>
     </div>

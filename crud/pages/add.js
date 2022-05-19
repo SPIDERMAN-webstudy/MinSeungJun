@@ -8,6 +8,9 @@ import {
   Firestore,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
+import styles from "../styles/add.module.css";
+import RealButton from "../component/button/RealButton";
+import Input from "../component/input/input";
 const add = () => {
   const router = useRouter();
   const onClicks = (title) => {
@@ -39,9 +42,9 @@ const add = () => {
     onClicks(title);
   };
   return (
-    <div>
+    <div className={styles.all}>
       <form onSubmit={handleSubmint}>
-        <input
+        <Input
           value={title}
           onChange={({ target: { value } }) => setTitle(value)}
           placeholder="title"
@@ -49,19 +52,20 @@ const add = () => {
         />
         <br />
         <textarea
+          className={styles.ta}
           html={story.current}
           onChange={({ target: { value } }) => (story.current = value)}
           placeholder="story"
           required
         />
         <br />
-        <input
+        <Input
           value={writer}
           onChange={({ target: { value } }) => setWriter(value)}
           placeholder="writer"
           required
         />
-        <input
+        <Input
           value={password}
           onChange={({ target: { value } }) => setPassword(value)}
           placeholder="password"
@@ -69,10 +73,10 @@ const add = () => {
         />
         <br />
 
-        <input type="submit" value="글 완성" />
+        <RealButton type="submit"> 글 완성 </RealButton>
         <Link href="/">
           <a>
-            <input type="button" value="글 취소" />
+            <RealButton type="button"> 글 취소 </RealButton>
           </a>
         </Link>
       </form>

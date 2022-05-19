@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+import styles from "./Button.module.css";
 import Modal from "../modal/modal";
-
+import Input from "../input/input";
+import RealButton from "./RealButton";
 const Button = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [pass, setPass] = useState("");
@@ -18,18 +20,26 @@ const Button = (props) => {
   };
   return (
     <div>
-      <button onClick={() => setShowModal(true)}>🧇</button>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
+      <button
+        className={`${styles.btn} ${styles.first}`}
+        onClick={() => setShowModal(true)}
+      >
+        삭제
+      </button>
+      <Modal show={showModal}>
         <form onSubmit={handleSub}>
           <label htmlFor="pass">비밀번호:</label>
-          <input
+          <Input
             id="pass"
             value={pass}
             onChange={({ target: { value } }) => setPass(value)}
             required
             placeholder="password"
-          ></input>
-          <button type="submit">확인</button>
+          />
+          <RealButton type="submit">확인</RealButton>
+          <RealButton type="button" onClick={() => setShowModal(false)}>
+            닫기
+          </RealButton>
         </form>
       </Modal>
     </div>
