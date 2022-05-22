@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import Button from "../component/button/button";
+import KakaoLog from "../component/login/KakaoLog";
 function Home() {
   const router = useRouter();
   const onClicks = (id, title) => {
@@ -49,6 +50,7 @@ function Home() {
   };
   return (
     <div>
+      <KakaoLog />
       <Seo title="home" />
       {story?.map((user, index) => (
         <Card key={index}>
