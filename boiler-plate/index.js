@@ -4,9 +4,7 @@ const port = 5000;
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://StormMin:x789NrwcgbmureG@boilerplate.bbk3vyl.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect("???")
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
